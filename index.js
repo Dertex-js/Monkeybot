@@ -60,43 +60,43 @@ const inline_keyboard = [
 ]
 
 //Keyboard
-bot.onText(new RegExp(`${KEYBOARD_COMMAND}(.*)`), (msg, [source, match]) => {
-    const { chat: { id }} = msg
-
-    switch (match) {
-        case KEYBOARD_COMMAND_SHOW:
-            bot.sendMessage(id, 'Keyboard', {
-                reply_markup: {
-                    keyboard: [
-                        [
-                            'Кофе'
-                        ],
-                        [
-                            `${KEYBOARD_COMMAND}${KEYBOARD_COMMAND_HIDE}`
-                        ]
-                    ]
-
-                }
-            })
-            break
-        case KEYBOARD_COMMAND_HIDE:
-            bot.sendMessage(id, 'Hide a keyboard', {
-                reply_markup: {
-                    remove_keyboard: true
-                }
-            })
-            break
-        case KEYBOARD_COMMAND_INLINE:
-            bot.sendMessage(id, 'Наши ТТК:', {
-                reply_markup: {
-                    inline_keyboard
-                }
-            })
-            break
-        default:
-            bot.sendMessage(id, 'Invalid parameters')
-    }
-})
+// bot.onText(new RegExp(`${KEYBOARD_COMMAND}(.*)`), (msg, [source, match]) => {
+//     const { chat: { id }} = msg
+//
+//     switch (match) {
+//         case KEYBOARD_COMMAND_SHOW:
+//             bot.sendMessage(id, 'Выбери', {
+//                 reply_markup: {
+//                     keyboard: [
+//                         [
+//                             'Кофе'
+//                         ],
+//                         [
+//                             `${KEYBOARD_COMMAND}${KEYBOARD_COMMAND_HIDE}`
+//                         ]
+//                     ]
+//
+//                 }
+//             })
+//             break
+//         case KEYBOARD_COMMAND_HIDE:
+//             bot.sendMessage(id, 'Hide a keyboard', {
+//                 reply_markup: {
+//                     remove_keyboard: true
+//                 }
+//             })
+//             break
+//         case KEYBOARD_COMMAND_INLINE:
+//             bot.sendMessage(id, 'Наши ТТК:', {
+//                 reply_markup: {
+//                     inline_keyboard
+//                 }
+//             })
+//             break
+//         default:
+//             bot.sendMessage(id, 'Invalid parameters')
+//     }
+// })
 
 //Inline Keyboard
 bot.on('callback_query', query => {
